@@ -56,7 +56,7 @@ class Processor
         $rule = $this->getRuleByName($coupon);
 
         if ($rule instanceof Rule && $rule->getSimpleAction() == RuleInterface::DISCOUNT_ACTION_FIXED_AMOUNT_FOR_CART) {
-            $rule->setDiscountAmount($rule->getDiscountAmount() + $discount);
+            $rule->setDiscountAmount($discount);
             $rule->setCouponCode($coupon);
             $this->ruleResource->save($rule);
         } else {

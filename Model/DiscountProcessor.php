@@ -58,7 +58,7 @@ class DiscountProcessor
             $groups = implode(',', $this->getAvailableGroups());
         }
 
-        if (empty ($quoteCoupon) || strpos($quoteCoupon, self::COUPON_PREFIX) !== 0) {
+        if (empty ($quoteCoupon) || strpos($quoteCoupon, self::COUPON_PREFIX) === 0) {
             $this->ruleProcessor->process(
                 $couponCode,
                 $discountAmount,
