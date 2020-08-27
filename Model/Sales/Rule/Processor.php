@@ -8,7 +8,7 @@ use Magento\SalesRule\Model\Rule;
 use Magento\SalesRule\Model\RuleFactory;
 use Magento\SalesRule\Model\ResourceModel\Rule as RuleResource;
 use Magento\SalesRule\Model\ResourceModel\Rule\CollectionFactory as RuleCollectionFactory;
-
+use Magento\SalesRule\Model\ResourceModel\Rule\Collection as RuleCollection;
 class Processor
 {
     /**
@@ -102,6 +102,9 @@ class Processor
      * @return DataObject|null
      */
     protected function getRuleByName($name) {
+        /**
+         * @var $collection RuleCollection
+         */
         $collection = $this->ruleCollectionFactory->create();
 
         $collection->addFieldToFilter('name', $name);
